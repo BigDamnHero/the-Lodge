@@ -1,0 +1,10 @@
+#!/bin/bash
+export MAIL_ADDR=smtp.gmail.com
+export MAIL_PORT=587
+export MAIL_DOMAIN=gmail.com
+export MAIL_USER=
+export MAIL_PASS=
+export MAIL_AUTH=plain
+export MAIL_STARTTLS=true
+export SECRET_TOKEN=28af5d7fefc69db64043c71b3a24e36ee54eaec618852b898df809a8415202b72456becbd9e4eef8a27408366db69b86dd98e77ed1e3f8ccfa63745442bd6957
+rails server

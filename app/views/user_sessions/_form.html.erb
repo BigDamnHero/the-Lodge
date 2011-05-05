@@ -1,0 +1,14 @@
+<%= form_for(@user_session) do |f| %>
+
+  <span class="field">
+    <%= f.text_field :email, :class => "login_input login_email default_text", :title => "e-mail address" %>
+  </span>
+  <span class="field">
+    <%= f.password_field :password, :class => "login_input login_password default_text", :title => "password" %>
+  </span>
+  
+  <span class="actions">
+    <input type="submit" id="login_submit" value="Login" class="login_button" />
+  </span>
+<% end %>
+

@@ -1,4 +1,8 @@
 .bundle
 db/*.sqlite3
 log/*.log
-tmp/
+log/*.pid
+tmp/**/*
+config/database.yml
+config/site.yml
+TODO

@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*:focus {
+
+}
+
+body {
+    font-size: 62.5%;
+    font-family: "lucida grande", "lucida sans unicode", helvetica, arial, sans-serif;
+    color: #181818;
+    background: #000 url('/images/theLodge.png') no-repeat center top;
+}
+
+/* Headers ---------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    line-height: 1.1;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 3.4em;
+    margin-bottom: .1em;
+}
+
+h2 {
+    font-size: 2.8em;
+    margin-bottom: .1em;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: .1em;
+}
+
+/* Images ----------------------------------------------------------------*/
+
+img { border: 0px; }
+img:active { border: 0px; }
+
+/* Forms -----------------------------------------------------------------*/
+input {
+    border: 0;
+    color: #222;
+    font-style: none;
+}
+
+.default_text_active {
+    color: #707070;
+    font-style: italic;
+}
+
+.field_with_errors input {
+    background: rgba(255, 215, 215, 1);
+}
+
+/* Tables ----------------------------------------------------------------*/
+
+table {}
+
+tr {}
+
+th {
+    padding: 0px 8px;
+    text-align: left;
+}
+
+td {
+    padding: 2px 8px;
+}
+
+td.control {
+    padding: 2px 2px;
+}
+
+/* Links -----------------------------------------------------------------*/
+a { text-decoration: none; color: #444; }
+a:hover { text-decoration: underline; color: #999; }
+
+
+/* Structure -------------------------------------------------------------*/
+#page_container {
+    position: relative;
+    min-width: 1000px;
+    margin: auto;
+    width: 1200px;  /* todo: flexible layout */
+}
+
+#header_container {
+    height: 180px;
+}
+
+#account_bar {
+    position: absolute;
+    right: 0;
+    top: 1em;
+}
+
+#account_bar  div {
+    display: inline-block;
+}
+
+#body_container {
+    margin: 10px 30px;
+    display: -webkit-box;
+    display: -moz-box;
+}
+
+#notice_container {
+    margin: -15px auto 10px;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    border: solid #000 1px;
+    color: #f0f0f0;
+}
+
+#footer_container {
+    
+}
+
+.content_box {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    border: solid #606060 1px;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.8);
+}
+
+#main_column {
+    width: 800px;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+}
+
+#sidebar {
+    width: 250px;
+    margin-left: 25px;
+}
+
+/* Menu Bar --------------------------------------------------------------*/
+#home_link {
+    position: absolute;
+    top: 25px;
+    left: 150px;
+}
+
+#menu_bar {
+    height: 2.5em;
+    width: 1160px;
+    position: relative;
+    top: 130px;
+    padding: 0 2.0em;
+    background: rgba(0, 0, 0, 0.7);
+    display: -webkit-box;
+    display: -moz-box;
+}
+
+#menu_bar a {
+    color: #999;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 0 0.5em;
+    margin: 0 1px;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+}
+
+#menu_bar a:hover {
+    color: #f0f0f0;
+    border: solid #666;
+    border-width: 0 1px;
+    margin: 0;
+
+    background: -webkit-gradient(linear, left top, left bottom,
+                                 color-stop(0, #161616),
+                                 color-stop(0.04, #2f2f2f), 
+                                 color-stop(.50, #1e1f1f), 
+                                 color-stop(.52, #0c0c0c), 
+                                 to(#000));
+    background: -moz-linear-gradient(top, #161616, #2f2f2f 4%, #1e1f1f 50%, #0c0c0c 52%, #000);  
+    border-top: solid 1px #222;
+    border-bottom: solid 1px #111;
+    -moz-box-shadow:inset 0 0 5px #000000;
+    -webkit-box-shadow:inset 0 0 5px #000000;
+    box-shadow:inset 0 0 5px #000000;
+}
+
+#menu_bar a:active {
+    color: #f0f0f0;
+    border: solid #666;
+    border-width: 0 1px;
+    margin: 0;
+    padding-top: 1px;
+
+    background: -webkit-gradient(linear, left top, left bottom,
+                                 color-stop(0, #161616),
+                                 color-stop(.25, #2f2f2f), 
+                                 color-stop(.40, #1e1f1f), 
+                                 color-stop(.48, #0c0c0c), 
+                                 to(#000));
+    background: -moz-linear-gradient(top, #161616, #2f2f2f 25%, #1e1f1f 40%, #0c0c0c 48%, #000);  
+    border-top: solid 1px #222;
+    border-bottom: solid 1px #111;
+    -moz-box-shadow:inset 0 0 5px #000000;
+    -webkit-box-shadow:inset 0 0 5px #000000;
+    box-shadow:inset 0 0 5px #000000;
+}
+
+#menu_bar span {
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+}
+
+/* Login Form ------------------------------------------------------------*/
+.login_input {
+    width: 10em;
+    padding: 0.3em;
+    background: #fff;
+    border-radius: 6px;
+    border: solid #666 1px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .3),inset 0 1px 2px rgba(0, 0, 0, .2);
+    opacity: 0.8;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+}
+
+.login_input:focus {
+    box-shadow: 0 0 20px rgba(255, 230, 200, .8),inset 0 1px 2px rgba(0, 0, 0, .2);
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    outline: none;
+}
+
+.login_button {
+    border-radius: 8px;
+    border: solid #242 1px;
+    padding: 0.25em 1em;
+    color: #fff;
+    background: #6a6;
+    text-transform: uppercase;
+    text-shadow: #000 1px 1px;
+    opacity: 0.7;
+    background: -webkit-gradient(linear, left top, left bottom,
+                                 color-stop(0, #6a6),
+                                 color-stop(.50, #696), 
+                                 color-stop(.60, #484), 
+                                 to(#030));
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+}
+
+.login_button:hover, .login_button:focus {
+    box-shadow: 0 0 20px rgba(255, 255, 255, .3),inset 0 1px 2px rgba(0, 0, 0, .2);
+    opacity: 1;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    outline: none;
+}
+
+.login_button:active {
+    position: relative;
+    top: 1px;
+    border: solid #020 1px;
+    outline: none;
+}

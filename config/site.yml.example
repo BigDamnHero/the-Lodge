@@ -1,0 +1,14 @@
+MAIL_ADDR: smtp.gmail.com
+MAIL_PORT: 587
+MAIL_DOMAIN: gmail.com
+MAIL_USER: <your_user_name>
+MAIL_PASS: <your_password>
+MAIL_AUTH: plain
+MAIL_STARTTLS: true
+
+# Your secret key for verifying the integrity of signed cookies.
+# If you change this key, all old signed cookies will become invalid!
+# Make sure the secret is at least 30 characters and all random,
+# no regular words or you'll be exposed to dictionary attacks.
+SECRET_TOKEN: b22943a59ce4666ec4bbca5b25cd192b064622a1a9f739bfb16a011a17debdec6dc0b5955f01cb660001aa5a6cd2074e8e19b5b74cdb29af394d2dc7690162d0
+
