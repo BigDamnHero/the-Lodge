@@ -5,9 +5,42 @@ with and learn Ruby on Rails, and 2. to develop a useful campaign management too
 the Pathfinder tabletop RPG.
 
 
-1. Setting up a develoipment environment
+1. Setting up a development environment
 ========================================
+First things first, be sure you have Ruby and Rails installed.  This is being developed
+using the following versions,
+
+  Ruby:  1.9.2p180
+  Rails: 3.0.6
+
+It is recommended to user RVM to install Ruby.  RVM makes it easy to manage multiple
+versions of Ruby on a single development machine.
+
+After downloading the source and installing Ruby & Rails, be sure to run 'bundle install'
+from the root directory.
+
+config/database.yml
+  Setup your database information in this file.  A database.yml.example file is provided
+for your convenience. It contains setup for a simple sqlite3 database.
+
 config/site.yml
   This file must be setup to provide a number of environtment-specific or secure properties.
 A sample file - config/site.yml.example - is provided for convenience. Simply copy this file
 and overwrite the values with your own. 
+
+After your yml files are setup, run 'rake db:create' and 'rake db:migrate' to create your 
+initial database.  If you get errors while running these commands, it may be due to your
+rake version.  This project currently requires rake 0.8.7.  You can uninstall rake using 
+'gem uninstall rake' and reinstall the correct version with 'gem install rake -v 0.8.7', or
+you can user RVM to create a new gemset for the correct version.
+
+Finally, run 'rails s' to start your local server.
+
+2. Creating an admin account
+========================================
+The database setup scripts don't create an initial account.  To create your own, load
+http://localhost:3000/register in your browser.  Enter an email address and password,
+click create user, and you're all set.  This creates an admin user account.  Don't worry,
+though, after a first user is created, users may no longer self-register like this.
+Additional users must be invited from the Users page, and will not be admin users unless
+explicitly set as such.
