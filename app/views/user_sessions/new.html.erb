@@ -1,6 +1,16 @@
-<h1>New user_session</h1>
+<h1>Login</h1>
 
-<%= render 'form' %>
+<%= form_for(@user_session) do |f| %>
 
-<%= link_to 'Back', :root %>
+  <div class="field">
+    <%= f.text_field :email, :class => "login_input login_email default_text", :title => "e-mail address" %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password, :class => "login_input login_password default_text", :title => "password" %>
+  </div>
+  
+  <div class="actions">
+    <input type="submit" id="login_submit" value="Login" class="login_button" />
+  </div>
+<% end %>
 

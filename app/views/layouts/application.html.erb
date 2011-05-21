@@ -14,9 +14,12 @@
         
             <a id="home_link" href="/"><img src="/images/title.png" alt="The Lodge"/></a>
         
-            <div id="account_bar">
+            <div id="user_actions">
                 <% if current_user %>
-                    Hello! | <%= link_to "Logout", :logout %>
+                    <div id="account_bar">
+                        <span id="welcom_message">Welcome <%= current_user.email %></span> 
+                        | <%= link_to "Logout", :logout, :id => 'logout', :class => 'logout_link' %>
+                    </div>
                 <% else %>
                     <%= render 'user_sessions/form' %>
                 <% end %>
