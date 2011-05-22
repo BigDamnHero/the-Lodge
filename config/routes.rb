@@ -14,6 +14,7 @@ TheLodge::Application.routes.draw do
   match 'register(/:invite_code)/' => 'users#submit_registration', :as => :register, :via => [:post, :put]
   match 'activate(/:activation_code)' => 'users#activate', :as => :activate_account
   match 'send_activation(/:user_id)' => 'users#send_activation', :as => :send_activation
+  match 'getting_started' => 'general#getting_started', :as => :getting_started
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

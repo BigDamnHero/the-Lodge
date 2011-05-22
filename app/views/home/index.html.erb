@@ -1,2 +1,5 @@
 <h1>Welcome to the Lodge</h1>
 
+<% if current_user && current_user.show_tutorial %>
+    <%= render 'newuser' %>
+<% end %>

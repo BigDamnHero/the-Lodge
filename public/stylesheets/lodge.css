@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 3.4em;
-    margin-bottom: .1em;
+    margin-bottom: .3em;
 }
 
 h2 {
@@ -34,6 +34,7 @@ h2 {
 h3 {
     font-size: 1.8em;
     margin-bottom: .1em;
+    font-style: italic;
 }
 
 /* Images ----------------------------------------------------------------*/
@@ -77,8 +78,8 @@ td.control {
 }
 
 /* Links -----------------------------------------------------------------*/
-a { text-decoration: none; color: #444; }
-a:hover { text-decoration: underline; color: #999; }
+a { text-decoration: none; color: #242; font-weight: bold; }
+a:hover { text-decoration: underline; color: #262; }
 
 
 /* Structure -------------------------------------------------------------*/
@@ -279,4 +280,38 @@ a:hover { text-decoration: underline; color: #999; }
     top: 1px;
     border: solid #020 1px;
     outline: none;
+}
+
+
+/* Blocks ----------------------------------------------------------------*/
+.block {
+    position: relative;
+}
+
+.block_heading {
+    text-align: right;
+    padding-right: 1em;
+    border-bottom: solid #333 1px;
+}
+
+.block_graphic {
+    float: left;
+    margin-top: -2em;
+}
+
+.block p {
+    margin-top: 1em;
+}
+
+#new_user_block {
+    min-height: 225px;
+}
+
+#new_user_block_heading {
+    margin-left: 140px;
+}
+
+#new_user_block p {
+    position: relative;
+    left: -30px;
 }
