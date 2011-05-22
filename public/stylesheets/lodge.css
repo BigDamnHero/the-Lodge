@@ -54,6 +54,10 @@ input {
     font-style: italic;
 }
 
+div.field {
+    margin: 0.5em 0;
+}
+
 .field_with_errors input {
     background: rgba(255, 215, 215, 1);
 }
@@ -81,7 +85,6 @@ td.control {
 a { text-decoration: none; color: #242; font-weight: bold; }
 a:hover { text-decoration: underline; color: #262; }
 
-
 /* Structure -------------------------------------------------------------*/
 #page_container {
     position: relative;
@@ -94,14 +97,26 @@ a:hover { text-decoration: underline; color: #262; }
     height: 180px;
 }
 
-#account_bar {
+#user_actions {
     position: absolute;
     right: 0;
-    top: 1em;
+    top: 0;
+    color: #999;
 }
 
-#account_bar  div {
+#user_actions form {
+    padding-top: 1em;
+}
+
+#user_actions div {
     display: inline-block;
+}
+
+#account_bar {
+    font-size: 1.25em;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 0 0 8px 8px;
+    padding: 1em 1em 0.5em 1em;
 }
 
 #body_container {
@@ -127,6 +142,7 @@ a:hover { text-decoration: underline; color: #262; }
 }
 
 .content_box {
+    position: relative;
     padding: 10px;
     background: rgba(255, 255, 255, 0.75);
     border-radius: 6px;
@@ -145,6 +161,20 @@ a:hover { text-decoration: underline; color: #262; }
 #sidebar {
     width: 250px;
     margin-left: 25px;
+}
+
+.actions_menu {
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+}
+
+.action_link {
+    font-weight: bold;
+}
+
+.item_action_link {
+    font-style: italic;
 }
 
 /* Menu Bar --------------------------------------------------------------*/
@@ -249,6 +279,10 @@ a:hover { text-decoration: underline; color: #262; }
     outline: none;
 }
 
+div .login_input {
+    /*width: 20em;*/
+}
+
 .login_button {
     border-radius: 8px;
     border: solid #242 1px;
@@ -281,6 +315,20 @@ a:hover { text-decoration: underline; color: #262; }
     border: solid #020 1px;
     outline: none;
 }
+
+.logout_link {
+    color: #999;
+    font-weight: bold;
+}
+
+.logout_link:hover, .logout_link:focus {
+    color: #ddd;
+}
+
+.logout_link:active {
+
+}
+
 
 
 /* Blocks ----------------------------------------------------------------*/

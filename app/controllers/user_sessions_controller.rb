@@ -23,7 +23,7 @@ class UserSessionsController < ApplicationController
       else
         # Hide specific errors about why login failed
         @user_session = UserSession.new(params[:user_session])
-        format.html { render :action => "new" }
+        format.html { redirect_to(:login, :notice => 'The username or password you entered is incorrect.') }
         format.xml  { render :xml => @user_session.errors, :status => :unprocessable_entity }
       end
     end
