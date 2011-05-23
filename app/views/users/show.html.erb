@@ -1,26 +1,28 @@
-<p id="notice"><%= notice %></p>
+<h1>My Account</h1>
 
-<p>
-    <b>Email:</b>
-    <%= @user.email %>
-</p>
+<h3><%= @user.email %></h3>
 
-<p>
-    <b>Crypted password:</b>
-    <%= @user.crypted_password %>
-</p>
+<div class="field">
+    <label>First Name:</label>
+    <%= @user.first_name %>
+</div>
 
-<p>
-    <b>Password salt:</b>
-    <%= @user.password_salt %>
-</p>
+<div class="field">
+    <label>Last Name:</label>
+    <%= @user.last_name %>
+</div>
 
-<p>
-    <b>Persistence token:</b>
-    <%= @user.persistence_token %>
-</p>
+<div class="field">
+    <label>Getting Started Guides:</label>
+    <% if @user.show_tutorial %>On<% else %>Off<% end %>
+    
+</div>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-
+<div class="actions">
+  <%= link_to 'Edit', edit_user_path(@user), :class => "form_action" %>
+  <% if is_admin %>
+    <%= link_to 'Done', users_path, :class => "form_action" %>
+  <% else %>
+    <%= link_to 'Done', :root, :class => "form_action" %>
+  <% end %>
+</div>

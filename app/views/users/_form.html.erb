@@ -24,14 +24,6 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
     <%= f.label :show_tutorial %><br/>
     <%= f.check_box :show_tutorial %>
   </div>
@@ -41,8 +33,8 @@
     <!-- admin options go here -->
   <% end %>
 
-  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "form_action primary" %>
+    <%= link_to 'Cancel', users_path, :class => "form_action negative" %>
   </div>
 <% end %>

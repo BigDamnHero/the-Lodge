@@ -19,9 +19,8 @@
     </div>
       
     <div class="actions">
-        <%= f.submit :class => 'form_submit' %>
+        <%= f.submit :class => 'form_action primary' %>
+        <%= link_to 'Back', users_path, :class => 'form_action negative' %>
     </div>
 <% end %>
-
-<%= link_to 'Back', users_path %>
 
