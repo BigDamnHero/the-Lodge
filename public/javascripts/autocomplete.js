@@ -48,9 +48,9 @@ Lodge.displayAutoCompletes = function(el, items) {
     child.addClass("autocomplete_option");
     child.data("object_id", this.id);
     child.text(this.name);
-    child.hide();
+    /*child.hide();*/
     div.append(child);
-    child.slideDown(200);
+    /*child.slideDown(200);*/
     child.click(function() {
       el.val(child.text());
       $("#" + el.attr("data-id-field")).val(child.data("object_id"));
