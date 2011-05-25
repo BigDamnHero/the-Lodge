@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
     acts_as_authentic
     serialize :roles
     
+    has_many  :characters
+    
     def after_initialize
       self[:roles] = self[:roles] || []
     end

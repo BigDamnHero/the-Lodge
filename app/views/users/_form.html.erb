@@ -35,6 +35,10 @@
 
   <div class="actions">
     <%= f.submit :class => "form_action primary" %>
-    <%= link_to 'Cancel', users_path, :class => "form_action negative" %>
+    <% if is_admin %>
+      <%= link_to 'Cancel', users_path, :class => "form_action negative" %>
+    <% else %>
+      <%= link_to 'Cancel', :root, :class => "form_action negative" %>
+    <% end %>
   </div>
 <% end %>

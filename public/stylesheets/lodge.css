@@ -14,6 +14,8 @@ body {
     background: #000 url('/images/theLodge.png') no-repeat center top;
 }
 
+.hidden { display: none; }
+
 /* Headers ---------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -43,7 +45,7 @@ img { border: 0px; }
 img:active { border: 0px; }
 
 /* Forms -----------------------------------------------------------------*/
-input {
+input, textarea {
     color: #222;
     font-style: none;
     border-radius: 4px;
@@ -52,6 +54,9 @@ input {
     padding: 0.25em;
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .6);
 }
+
+input[type="text"], textarea { width: 30em; }
+textarea { height: 6em; }
 
 .field label {
   font-style: italic;
@@ -337,7 +342,7 @@ a:hover { text-decoration: underline; color: #262; }
 
 /* Login Form ------------------------------------------------------------*/
 .login_input {
-    width: 10em;
+    width: 10em !important;
     padding: 0.3em;
     background: #fff;
     border-radius: 6px;
@@ -439,4 +444,29 @@ div .login_input {
 #new_user_block p {
     position: relative;
     left: -30px;
+}
+
+
+
+/* Autocomplete ----------------------------------------------------------*/
+.autocomplete_options {
+  background: #fff; /*rgba(255, 255, 255, 0.9);*/
+  border: solid #666;
+  border-width: 0 1px 1px 1px;
+  border-radius: 0 0 5px 5px;
+}
+
+.autocomplete_option {
+  border-bottom: dotted #ccc 1px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.autocomplete_option:last-child {
+  border-bottom: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+.autocomplete_option:hover {
+  background: #cfc;
 }

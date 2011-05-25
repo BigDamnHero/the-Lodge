@@ -1,20 +1,23 @@
 TheLodge::Application.routes.draw do
 
-  resources :users, :user_sessions
+  resources :users, :user_sessions, :characters, :races
 
   root :to => "home#index"
   # get "home/index"
-  
-  #match 'register' => 'users#new', :as => :register
-  
+    
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  match 'misc' => 'home#misc', :as => :misc
 
   match 'register(/:invite_code)' => 'users#register', :as => :register, :via => 'get'
   match 'register(/:invite_code)/' => 'users#submit_registration', :as => :register, :via => [:post, :put]
   match 'activate(/:activation_code)' => 'users#activate', :as => :activate_account
   match 'send_activation(/:user_id)' => 'users#send_activation', :as => :send_activation
   match 'getting_started' => 'general#getting_started', :as => :getting_started
+  match 'races/starting_with/:text' => 'races#starting_with'
+
+  # Characters
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
