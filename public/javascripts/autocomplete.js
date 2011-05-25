@@ -70,7 +70,7 @@ Lodge.loadAutoCompletes = function(el) {
         Lodge.displayAutoCompletes(el, JSON.parse(data));
       },
       error: function(xhr, status, error) {
-        alert("Error");
+        
       }
     });
   }
