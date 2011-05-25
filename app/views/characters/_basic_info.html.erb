@@ -1,0 +1,15 @@
+<h3>Basic Info</h3>
+
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :race %><br />
+  <%= f.text_field :race, :class => 'hidden', :id => 'race_id' %>
+  <input id="race_input" class="autocomplete" type="text" data-url="/races/starting_with/" data-id-field="race_id" autocomplete="off" />
+</div>
+<div class="field">
+  <%= f.label :description %><br />
+  <%= f.text_area :description %>
+</div>

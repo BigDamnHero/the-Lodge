@@ -1,0 +1,37 @@
+<h1 id="races_heading" class="page_heading">Races</h1>
+
+<div id="member_actions" class="actions_menu">
+    <%= link_to 'New Race', new_race_path, :class => 'action_link' %>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tfoot>
+    <tbody>
+    <% @races.each do |race| %>
+        <tr>
+            <td><%= race.name %></td>
+            <td class="control"><%= link_to 'Show', race, :class => 'item_action_link' %></td>
+            <td class="control"><%= link_to 'Edit', edit_race_path(race), :class => 'item_action_link' %></td>
+            <td class="control"><%= link_to 'Destroy', race, :confirm => 'Are you sure?', :method => :delete, :class => 'item_action_link' %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<br />
+

@@ -1,0 +1,28 @@
+<h1>New Character</h1>
+
+<%= form_for(@character) do |f| %>
+  <% if @character.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(@character.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+          <% @character.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+          </ul>
+      </div>
+  <% end %>
+
+  <div id="basic_info_panel" class="form_panel">
+    <%= render 'basic_info', :f => f %>
+  </div>
+  
+  
+  
+  <div class="actions">
+    <%= f.submit :class => 'form_action primary' %>
+    <a id="back_link" href="#" class="form_action">Back</a>
+    <a id="next_link" href="#stats" class="form_action primary">Next</a>
+    <%= link_to 'Cancel', characters_path, :class => 'form_action negative' %>
+  </div>
+<% end %>
