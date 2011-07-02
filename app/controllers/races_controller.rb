@@ -5,7 +5,7 @@ class RacesController < ApplicationController
   # GET /characters
   # GET /characters.xml
   def index
-    @races = Race.all
+    @races = Race.order("name");
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,6 +47,30 @@ class RacesController < ApplicationController
     end
   end
   
+  
+  def edit
+    @race = Race.find(params[:id])
+    
+    respond_to do |format|
+      format.html # edit.html.erb
+      format.xml  { render :xml => @race }
+    end
+  end
+  
+  def update
+    @race = Race.find(params[:id])
+    
+    respond_to do |format|
+      if @race.update_attributes(params[:race])
+        format.html { redirect_to(races_url, :notice => @race.name + ' updated successfully.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => 'edit' }
+        format.xml  { render :xml => @race.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   # DELETE /races/1
   # DELETE /races/1.xml
   def destroy
@@ -61,10 +85,10 @@ class RacesController < ApplicationController
   
   
   def starting_with
-    @races = Race.where("name like ?", params[:text] << '%').order("name").limit(5)
+    @races = Race.starting_with(params[:text])
     @values = []
     for @race in @races
-      @values << { :id => @race.id, :name => @race.name }
+      @values << { :id => @race.id, :name => @race.name, :description => @race.description }
     end
     
     respond_to do |format|

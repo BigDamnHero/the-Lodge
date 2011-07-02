@@ -1,0 +1,82 @@
+.coverflow_wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+}
+
+.coverflow_river {
+  height: 300px;
+}
+
+.coverflow_image {
+  position: absolute;
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;  
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+.coverflow_image img {
+  border: solid #666 1px;
+  cursor: pointer;
+}
+
+.coverflow_active {
+  
+}
+
+.coverflow_active img {
+  
+}
+
+.coverflow_image_0 { left:  50px; z-index: 1; opacity: 0.0; top: 150px; width: 0px; height: 0px;  }
+.coverflow_image_1 { left:  75px; z-index: 2; opacity: 1.0; top: 87px; width: 125px; height 125px; }
+.coverflow_image_2 { left: 142px; z-index: 3; opacity: 1.0; top: 62px; width: 175px; height: 175px; }
+.coverflow_image_3 { left: 242px; z-index: 4; opacity: 1.0; top: 0px; width: 300px; height: 300px; }
+.coverflow_image_4 { left: 467px; z-index: 3; opacity: 1.0; top: 62px; width: 175px; height: 175px; }
+.coverflow_image_5 { left: 585px; z-index: 2; opacity: 1.0; top: 87px; width: 125px; height 125px; }
+.coverflow_image_6 { left: 735px; z-index: 1; opacity: 0.0; top: 150px; width: 0px; height: 0px; }
+
+.coverflow_image_0 img { max-width: 0px; max-height: 0px; }
+.coverflow_image_1 img { max-width: 125px; max-height: 125px; box-shadow: -3px 3px 8px #000; }
+.coverflow_image_2 img { max-width: 175px; max-height: 175px; box-shadow: -3px 3px 8px #000; }
+.coverflow_image_3 img { max-width: 300px; max-height: 300px; box-shadow: 3px 3px 8px #000, -3px 3px 8px #000; }
+.coverflow_image_4 img { max-width: 175px; max-height: 175px; box-shadow: 3px 3px 8px #000; }
+.coverflow_image_5 img { max-width: 125px; max-height: 125px; box-shadow: 3px 3px 8px #000; }
+.coverflow_image_6 img { max-width: 0px; max-height: 0px; }
+
+.coverflow_detail_wrapper {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;  
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+.coverflow_details {
+  display: inline-block;
+  max-width: 500px;
+  padding: 10px;
+  margin-top: 0.5em;
+  color: #000;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  border: solid #606060 1px;
+  box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.8);
+}

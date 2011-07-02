@@ -1,0 +1,41 @@
+<%= form_for(@race) do |f| %>
+  <% if @race.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(@race.errors.count, "error") %> prohibited this race from being saved:</h2>
+
+          <ul>
+          <% @race.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+          </ul>
+      </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url, 'Image url' %><br />
+    <div class="image_field_wrapper">
+      <%= f.text_field :image_url, :class => 'image_field', 'data-preview' => 'image_preview' %>
+      <img id="image_preview" class="preview_img" />
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :thumb_url, 'Thumbnail url (recommended size: 300x300px)' %><br />
+    <div class="image_field_wrapper">
+      <%= f.text_field :thumb_url, :class => 'image_field', 'data-preview' => 'thumbnail_preview' %>
+      <img id="thumbnail_preview" class="preview_img" />
+    </div>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit :class => 'form_action primary' %>
+    <%= link_to 'Cancel', races_path, :class => 'form_action negative' %>
+  </div>
+<% end %>

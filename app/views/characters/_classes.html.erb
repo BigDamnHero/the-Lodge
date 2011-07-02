@@ -1,0 +1,31 @@
+<h3>Select Your Classes & Levels</h3>
+
+<div id="levels_wrapper">
+  <% @character.class_levels.each do |level| %>
+    <%= f.fields_for :class_levels, level do |lf| %>
+      <%= lf.text_field :user_id %>: <%= lf.text_field :class_id %> = <%= lf.text_field :level %>
+      <br/>
+    <% end %>
+  <% end %>
+</div>
+<!--<a href="#add_class" id="add_class_link">Add Class</a>-->
+
+
+<div id="class_picker"></div>
+<input id="char_class_id" name="class_id" type="hidden" />
+
+<!-- 
+  TODO: form to add levels for 1 or more classes
+        1 line initially, button to add additional lines
+        Button to remove each line
+        Each line has name & level fields
+        Update class name on bottom line as coverflow is changed
+        Name field is disabled, cannot be manually changed
+        Default to level 1 when a new line is added
+        Validate can't add a class twice
+        Build value map in hidden field
+        Form should appear above coverflow
+        
+        How to map to class levels for a character?
+-->
+

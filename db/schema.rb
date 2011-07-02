@@ -10,7 +10,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110523035521) do
+ActiveRecord::Schema.define(:version => 20110529045258) do
+
+  create_table "character_classes", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "role"
+    t.string   "alignment"
+    t.integer  "hit_die"
+    t.string   "image_url"
+    t.string   "thumb_url"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "character_classes", ["name"], :name => "index_character_classes_on_name", :unique => true
+
+  create_table "class_levels", :force => true do |t|
+    t.integer  "character_id"
+    t.integer  "class_id"
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "class_levels", ["character_id", "class_id"], :name => "index_class_levels_on_character_id_and_class_id", :unique => true
 
   create_table "creature_bases", :force => true do |t|
     t.integer  "user_id"
@@ -31,9 +56,22 @@ ActiveRecord::Schema.define(:version => 20110523035521) do
 
   create_table "races", :force => true do |t|
     t.string   "name"
+    t.text     "description"
+    t.text     "physical_description"
+    t.text     "society"
+    t.text     "relations"
+    t.text     "philosophy"
+    t.text     "adventurers"
+    t.text     "names"
+    t.text     "male_names"
+    t.text     "female_names"
+    t.string   "image_url"
+    t.string   "thumb_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "races", ["name"], :name => "index_races_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email"

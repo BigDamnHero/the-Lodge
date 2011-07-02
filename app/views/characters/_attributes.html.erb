@@ -1,0 +1,53 @@
+<h3 id="attr_title">Attributes</h3>
+
+<div id="attributes" class="content_box">
+  <div id="phys_attr" class="attr_group">
+    <div id="str_field" class="field attr_field">
+      <label for="character_str" class="required">Strength</label><a href="#" class="hint" title="Strength measures muscle and physical power. This ability is important for those who engage in hand-to-hand (or melee) combat, such as fighters, monks, paladins, and some rangers. Strength also sets the maximum amount of weight your character can carry. A character with a Strength score of 0 is too weak to move in any way and is unconscious. Some creatures do not possess a Strength score and have no modifier at all to Strength-based skills or checks."></a><br/>
+      <input id="character_str" name="character[str]" required="required" type="number" min="1" value="10" size="4" tabindex="1" class="focus" />
+      <span id="str_bonus" class="attr_bonus">+0</span>
+    </div>
+    <div id="dex_field" class="field attr_field">
+      <label for="character_dex" class="required">Dexterity</label><br/>
+      <input id="character_dex" name="character[dex]" required="required" type="number" min="1" value="10" size="4" tabindex="2" />
+      <span id="dex_bonus" class="attr_bonus">+0</span>
+    </div>
+    <div id="con_field" class="field attr_field">
+      <label for="character_con" class="required">Constitution</label><br/>
+      <input id="character_con" name="character[con]" required="required" type="number" min="1" value="10" size="4" tabindex="3" />
+      <span id="con_bonus" class="attr_bonus">+0</span>
+    </div>
+  </div>
+  <div id="mental_attr" class="attr_group">
+    <div id="int_field" class="field attr_field">
+      <label for="character_int" class="required">Intelligence</label><br/>
+      <input id="character_int" name="character[int]" required="required" type="number" min="1" value="10" size="4" tabindex="4" />
+      <span id="int_bonus" class="attr_bonus">+0</span>
+    </div>
+    <div id="wis_field" class="field attr_field">
+      <label for="character_wis" class="required">Wisdom</label><br/>
+      <input id="character_wis" name="character[wis]" required="required" type="number" min="1" value="10" size="4" tabindex="5" />
+      <span id="wis_bonus" class="attr_bonus">+0</span>
+    </div>
+    <div id="cha_field" class="field attr_field">
+      <label for="character_cha" class="required">Charisma</label><br/>
+      <input id="character_cha" name="character[cha]" required="required" type="number" min="1" value="10" size="4" tabindex="6" />
+      <span id="cha_bonus" class="attr_bonus">+0</span>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+
+<% content_for :js_init do %>
+  $(function() {
+    Lodge.initAttrInputs({
+      character_str: 'str_bonus',
+      character_dex: 'dex_bonus',
+      character_con: 'con_bonus',
+      character_int: 'int_bonus',
+      character_wis: 'wis_bonus',
+      character_cha: 'cha_bonus'
+    });
+  });
+<% end %>

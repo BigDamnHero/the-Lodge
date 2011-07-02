@@ -1,0 +1,53 @@
+<div id="race_details" class="race_detail_wrapper">
+  <h3><%=h @race.name %></h3>
+  <div class="content_box">
+    <%=hn @race.description %>
+    
+    <% if show? @race.physical_description %>
+      <div class="description_field">
+        <h5>Physical Description</h5>
+        <span><%=hn @race.physical_description %></span>
+      </div>
+    <% end %>
+    <% if show? @race.society %>
+      <div class="description_field">
+        <h5>Society</h5>
+        <span><%=hn @race.society %></span>
+      </div>
+    <% end %>
+    <% if show? @race.relations %>
+      <div class="description_field">
+        <h5>Relations</h5>
+        <span><%=hn @race.relations %></span>
+      </div>
+    <% end %>
+    <% if show? @race.philosophy %>
+      <div class="description_field">
+        <h5>Alignment &amp; Religions</h5>
+        <span><%=hn @race.philosophy %></span>
+      </div>
+    <% end %>
+    <% if show? @race.adventurers %>
+      <div class="description_field">
+        <h5>Adventurers</h5>
+        <span><%=hn @race.adventurers %></span>
+      </div>
+    <% end %>
+    <% if show?(@race.names) || show?(@race.male_names) || show?(@race.female_names) %>
+      <div class="description_field">
+        <h5>Names</h5>
+        <span><%=hn @race.names %></span>
+        <% if show? @race.male_names %>
+          <div></div>
+          <h6>Male Names:</h6>
+          <span><%=hn @race.male_names %></span>
+        <% end %>
+        <% if show? @race.female_names %>
+          <div></div>
+          <h6>Female Names:</h6>
+          <span><%=hn @race.female_names %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     serialize :roles
     
     has_many  :characters
+    has_many  :class_levels
     
     def after_initialize
       self[:roles] = self[:roles] || []

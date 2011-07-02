@@ -15,6 +15,7 @@ body {
 }
 
 .hidden { display: none; }
+.clear { clear: both; }
 
 /* Headers ---------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
@@ -30,13 +31,34 @@ h1 {
 
 h2 {
     font-size: 2.8em;
-    margin-bottom: .1em;
+    margin-bottom: .2em;
 }
 
 h3 {
     font-size: 1.8em;
-    margin-bottom: .1em;
+    margin-bottom: .2em;
     font-style: italic;
+}
+
+h4 {
+  font-size: 1.4em;
+  margin-bottom: .2em;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1.2em;
+  margin-bottom: .2em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h6 {
+  font-size: 1.0em;
+  margin-top: 0.5em;
+  display: inline-block;
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* Images ----------------------------------------------------------------*/
@@ -62,24 +84,34 @@ textarea { height: 6em; }
   font-style: italic;
 }
 
+.field label.required:after {
+  content: '*';
+}
+
 .field input {
   margin-top: 0.25em;
 }
 
 .form_action {
     padding: 0.25em 0.5em;
+    font-size: 1.3em;
     color: #000;
     font-weight: bold;
     text-transform: uppercase;
+    box-shadow: 0 0 0;
+}
+
+.form_action:hover {
+    text-decoration: none;
 }
 
 .form_action:active {
-    text-shadow: #eee -1px -1px;
+    text-shadow: #ddd -1px -1px;
     position: relative;
     top: 1px; left: 1px;
 }
 
-.form_action.negative:hover {
+a.negative:hover {
     color: #600;
 }
 
@@ -99,16 +131,16 @@ textarea { height: 6em; }
                                  color-stop(.50, #696), 
                                  color-stop(.60, #484), 
                                  to(#030));
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
+    -webkit-transition: box-shadow 0.25s;
+    -moz-transition: box-shadow 0.25s;
+    cursor: pointer;
 }
 
 .form_action.primary:hover, .form_action.primary:focus {
     box-shadow: 0 0 20px rgba(255, 255, 255, .9),inset 0 0 10px rgba(255, 255, 255, .6);
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
+    -webkit-transition: box-shadow 0.25s;
+    -moz-transition: box-shadow 0.25s;
     outline: none;
-    cursor: pointer;
 }
 
 .form_action.primary:active {
@@ -116,6 +148,21 @@ textarea { height: 6em; }
     top: 1px;
     border: solid #020 1px;
     outline: none;
+}
+
+.form_action.primary[disabled='disabled'] {
+    background: #666;
+    background: -webkit-gradient(linear, left top, left bottom,
+                                 color-stop(0, #999),
+                                 color-stop(.50, #666), 
+                                 color-stop(.60, #444), 
+                                 to(#111));
+}
+
+.form_action.primary[disabled='disabled']:active, .form_action.primary[disabled='disabled']:hover, .form_action.primary[disabled='disabled']:focus {
+  top: 0px; left: 0px;
+  box-shadow: 0 0 0;
+  cursor: default;
 }
 
 .form_action.cancel {
@@ -142,6 +189,8 @@ div.field {
 .actions {
   border-top: solid #333 1px;
   padding-top: 0.6em;
+  margin-top: 0.5em;
+  text-align: right;
 }
 
 /* Tables ----------------------------------------------------------------*/
@@ -226,6 +275,7 @@ a:hover { text-decoration: underline; color: #262; }
 .content_box {
     position: relative;
     padding: 10px;
+    color: #181818;
     background: rgba(255, 255, 255, 0.75);
     border-radius: 6px;
     -moz-border-radius: 6px;
@@ -257,6 +307,19 @@ a:hover { text-decoration: underline; color: #262; }
 
 .item_action_link {
     font-style: italic;
+}
+
+.description_field {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.description_field h5 {
+  margin-left: -1em;
+}
+
+.description_field span, .description_field p {
+  
 }
 
 /* Menu Bar --------------------------------------------------------------*/
@@ -448,6 +511,47 @@ div .login_input {
 
 
 
+/* New Character Form ----------------------------------------------------*/
+#attributes {
+  display: inline-block;
+  padding: 0;
+}
+
+.attr_group {
+  float: left;
+}
+
+.attr_group:first-child {
+  border-right: solid #606060 1px;
+}
+
+div.attr_field {
+  border-top: solid #606060 1px;
+  padding: 0.25em 2em 0.25em 0.5em;
+}
+
+div.attr_field:first-child {
+  border-top: 0px;
+}
+
+.attr_field input {
+  margin-left: 2em;
+}
+
+.attr_bonus {
+  margin-left: 0.5em;
+}
+
+.attr_bonus:before {
+  content: "(";
+}
+
+.attr_bonus:after {
+  content: ")";
+}
+
+
+
 /* Autocomplete ----------------------------------------------------------*/
 .autocomplete_options {
   background: #fff; /*rgba(255, 255, 255, 0.9);*/
@@ -469,4 +573,29 @@ div .login_input {
 
 .autocomplete_option:hover {
   background: #dfd;
+}
+
+
+
+/* Preview Image ---------------------------------------------------------*/
+.preview_img {
+  display: none;
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.image_field_wrapper * {
+  vertical-align: top;
+}
+
+
+
+/* Cover Flow Select -----------------------------------------------------*/
+.coverflow_detail_wrapper {
+  padding: 1em;
+}
+
+.coverflow_detail_wrapper h3 {
+  margin: 1em auto;
+  text-align: center;
 }

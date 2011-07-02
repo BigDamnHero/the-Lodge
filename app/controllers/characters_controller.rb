@@ -6,6 +6,7 @@ class CharactersController < ApplicationController
   # GET /characters.xml
   def index
     @characters = current_user.characters
+    #@characters = Character.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,6 +29,8 @@ class CharactersController < ApplicationController
   # GET /characters/new.xml
   def new
     @character = Character.new
+    #@character.class_levels << ClassLevel.new({ :user_id => 0, :class_id => 0, :level => 1 })
+    #@character.class_levels << ClassLevel.new({ :user_id => 0, :class_id => 1, :level => 1 })
     
     respond_to do |format|
       format.html # new.html.erb
@@ -35,4 +38,25 @@ class CharactersController < ApplicationController
     end
   end
 
+  def create
+    params[:character][:class_levels] = [ClassLevel.new({:user => current_user, :class_id => params[:class_id], :level => 1})]
+    params[:character][:user] = current_user
+    @character = Character.new(params[:character])
+    
+    if @character.save
+      redirect_to(characters_url, :notice => 'Your character has been created.')
+    else
+      render(:action => 'new', :notice => 'Error: could not create character.')
+    end
+  end
+  
+  def destroy
+    @character = Character.find(params[:id])
+    @character.destroy
+    
+    respond_to do |format|
+      format.html { redirect_to(characters_url) }
+      format.xml  { head :ok }
+    end
+  end
 end

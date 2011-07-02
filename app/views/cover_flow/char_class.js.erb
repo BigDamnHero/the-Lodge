@@ -1,0 +1,19 @@
+<div id="class_details" class="class_detail_wrapper">
+  <h3><%=h @c.name %></h3>
+  <div class="content_box">
+    <%=hn @c.description %>
+    
+    <% if show? @c.role %>
+      <div class="description_field">
+        <h5>Role</h5>
+        <span><%=hn @c.role %></span>
+      </div>
+    <% end %>
+
+    <div class="description_field">
+      <h5>Hit Die</h5>
+      <span>d<%=hn @c.hit_die %></span>
+    </div>
+    
+  </div>
+</div>

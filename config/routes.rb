@@ -1,10 +1,10 @@
 TheLodge::Application.routes.draw do
 
-  resources :users, :user_sessions, :characters, :races
+  resources :users, :user_sessions, :characters, :races, :character_classes
 
   root :to => "home#index"
   # get "home/index"
-    
+  
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'misc' => 'home#misc', :as => :misc
@@ -15,6 +15,12 @@ TheLodge::Application.routes.draw do
   match 'send_activation(/:user_id)' => 'users#send_activation', :as => :send_activation
   match 'getting_started' => 'general#getting_started', :as => :getting_started
   match 'races/starting_with/:text' => 'races#starting_with'
+
+  # Cover Flow helper methods
+  match 'cover_flow/races' => 'cover_flow#races'
+  match 'cover_flow/race/:race_id' => 'cover_flow#race'
+  match 'cover_flow/classes' => 'cover_flow#char_classes'
+  match 'cover_flow/class/:id' => 'cover_flow#char_class'
 
   # Characters
 

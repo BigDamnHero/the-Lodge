@@ -13,16 +13,45 @@
       </div>
   <% end %>
 
-  <div id="basic_info_panel" class="form_panel">
-    <%= render 'basic_info', :f => f %>
+  <div id="tabs">
+    
+    <ul>
+      <li><a id="race_tab" href="#race_panel">1. Race</a></li>
+      <li><a id="class_tab" href="#class_panel">2. Class</a></li>
+      <li><a id="attr_tab" href="#attributes_panel">3. Attributes</a></li>
+      <li><a id="skills_tab" href="#skills_panel">4. Skills</a></li>
+      <li><a id="feats_tab" href="#feats_panel">5. Feats</a></li>
+      <li><a id="basic_tab" href="#basic_info_panel">6. Personal Details</a></li>
+    </ul>
+    
+    <div id="basic_info_panel" class="form_panel hidden">
+      <%= render 'basic_info', :f => f %>
+    </div>
+    <div id="race_panel" class="form_panel hidden">
+      <%= render 'race', :f => f %>
+    </div>
+    <div id="attributes_panel" class="form_panel hidden">
+      <%= render 'attributes', :f => f %>
+    </div>
+    <div id="class_panel" class="form_panel hidden">
+      <%= render 'classes', :f => f %>
+    </div>
+    <div id="skills_panel" class="form_panel hidden">
+      <%= render 'skills', :f => f %>
+    </div>
+    <div id="feats_panel" class="form_panel hidden">
+      <%= render 'feats', :f => f %>
+    </div>
+    
+  
   </div>
-  
-  
   
   <div class="actions">
-    <%= f.submit :class => 'form_action primary' %>
-    <a id="back_link" href="#" class="form_action">Back</a>
-    <a id="next_link" href="#stats" class="form_action primary">Next</a>
-    <%= link_to 'Cancel', characters_path, :class => 'form_action negative' %>
+    <%= link_to 'Cancel', characters_path, :id => 'cancel_button', :class => 'form_action negative' %>
+    <%= f.submit 'Finish', :id => 'finish_button', :class => 'form_action primary', :disabled => true %>
   </div>
+<% end %>
+
+<% content_for :js_includes do %>
+  <script src="/javascripts/characters/forms.js" type="text/javascript"></script>
 <% end %>
