@@ -262,8 +262,8 @@ a:hover { text-decoration: underline; color: #262; }
     width: 400px;
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 6px;
-    -moz-border-radius: 6px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
     border: solid #000 1px;
     color: #f0f0f0;
 }
@@ -277,8 +277,8 @@ a:hover { text-decoration: underline; color: #262; }
     padding: 10px;
     color: #181818;
     background: rgba(255, 255, 255, 0.75);
-    border-radius: 6px;
-    -moz-border-radius: 6px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
     border: solid #606060 1px;
     box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.8);
 }
@@ -408,7 +408,7 @@ a:hover { text-decoration: underline; color: #262; }
     width: 10em !important;
     padding: 0.3em;
     background: #fff;
-    border-radius: 6px;
+    border-radius: 8px;
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .3),inset 0 1px 2px rgba(0, 0, 0, .2);
     opacity: 0.8;
     -webkit-transition: opacity 1s;
@@ -557,7 +557,7 @@ div.attr_field:first-child {
   background: #fff; /*rgba(255, 255, 255, 0.9);*/
   border: solid #666;
   border-width: 0 1px 1px 1px;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 4px 4px;
 }
 
 .autocomplete_option {
@@ -568,7 +568,7 @@ div.attr_field:first-child {
 
 .autocomplete_option:last-child {
   border-bottom: 0;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 4px 4px;
 }
 
 .autocomplete_option:hover {
@@ -598,4 +598,53 @@ div.attr_field:first-child {
 .coverflow_detail_wrapper h3 {
   margin: 1em auto;
   text-align: center;
+}
+
+
+
+/* Toggle Panel ----------------------------------------------------------*/
+.toggle_panel {
+  margin: 1em 0;
+}
+
+.toggle_panel>h3 {
+  border: solid #333 1px;
+  border-radius: 4px 4px 0 0;
+  color: #f0f0f0;
+  cursor: pointer;
+  padding: 0.25em;
+  margin: 0;
+  border-bottom: solid #333 1px;
+  background: -webkit-gradient(linear, left top, left bottom,
+                               color-stop(0, #6a6),
+                               color-stop(.50, #696), 
+                               color-stop(.60, #484), 
+                               to(#030));
+}
+
+.toggle_panel>h3:hover { 
+  text-shadow: 0 0 12px #f99;
+}
+
+.toggle_panel>div {
+  border: solid #333 1px;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  min-height: 1em;
+  max-height: 100em;
+  padding: 1em;
+  opacity: 1.0;
+  overflow: auto;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.toggle_panel>div.toggle_collapsed {
+  min-height: 0;
+  max-height: 0;
+  padding: 0;
+  opacity: 0.0;
+  overflow: hidden;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
 }

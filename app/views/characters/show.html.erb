@@ -1,0 +1,73 @@
+<h1 id="character_heading" class="page_heading"><%= @character.name %></h1>
+
+<%= form_for(@character) do |f| %>
+  <div id="basic_info_panel" class="toggle_panel">
+    <h3>Basic Info</h3>
+    <div>
+      Race: <%= @character.race.name %><br/>
+      Description: <%= @character.description %><br/>
+    </div>
+  </div>
+  <div id="class_panel" class="toggle_panel">
+    <h3>Classes</h3>
+    <div>
+      <% @character.class_levels.each do |cl| %>
+        <div><%= cl.character_class.name %> <%= cl.level %></div>
+      <% end %>
+    </div>
+  </div>
+  <div id="attributes_panel" class="toggle_panel">
+    <h3>Attributes</h3>
+    <div>
+      <div id="phys_attr" class="attr_group">
+        <div id="str_field" class="field attr_field">
+          <label for="character_str" class="">Strength: </label>
+          <span id="character_str" class="attr_score"><%= @character.str %></span>
+          <span id="str_bonus" class="attr_bonus">+0</span>
+        </div>
+        <div id="dex_field" class="field attr_field">
+          <label for="character_dex" class="">Dexterity: </label>
+          <span id="character_dex" class="attr_score"><%= @character.dex %></span>
+          <span id="dex_bonus" class="attr_bonus">+0</span>
+        </div>
+        <div id="con_field" class="field attr_field">
+          <label for="character_con" class="">Constitution: </label>
+          <span id="character_con" class="attr_score"><%= @character.con %></span>
+          <span id="con_bonus" class="attr_bonus">+0</span>
+        </div>
+      </div>
+      <div id="mental_attr" class="attr_group">
+        <div id="int_field" class="field attr_field">
+          <label for="character_int" class="">Intelligence: </label>
+          <span id="character_int" class="attr_score"><%= @character.int %></span>
+          <span id="int_bonus" class="attr_bonus">+0</span>
+        </div>
+        <div id="wis_field" class="field attr_field">
+          <label for="character_wis" class="">Wisdom: </label>
+          <span id="character_wis" class="attr_score"><%= @character.wis %></span>
+          <span id="wis_bonus" class="attr_bonus">+0</span>
+        </div>
+        <div id="cha_field" class="field attr_field">
+          <label for="character_cha" class="">Charisma: </label>
+          <span id="character_cha" class="attr_score"><%= @character.cha %></span>
+          <span id="cha_bonus" class="attr_bonus">+0</span>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="skills_panel" class="toggle_panel">
+    <h3>Skills</h3>
+    <div>
+    </div>
+  </div>
+  <div id="feats_panel" class="toggle_panel">
+    <h3>Feats</h3>
+    <div>
+    </div>
+  </div>
+  
+  <div class="actions">
+    <%= link_to 'Done', characters_url, :class => 'form_action primary' %>
+  </div>
+<% end %>

@@ -80,6 +80,15 @@ Lodge.initAttrInputs = function(inputMap)
   }
 }
 
+Lodge.initTogglePanels = function()
+{
+  $(".toggle_panel").each(function() {
+    $(this).children("h3").click(function() {
+      $(this).nextAll("div").toggleClass("toggle_collapsed");
+    });
+  });
+}
+
 Lodge.Util.wrap = function(x, min, max)
 {
   var n = x || 0;
@@ -92,4 +101,5 @@ Lodge.Util.wrap = function(x, min, max)
 $(document).ready(function() {
     Lodge.initDefaultText();
     Lodge.initPreviewImages();
+    Lodge.initTogglePanels();
 });

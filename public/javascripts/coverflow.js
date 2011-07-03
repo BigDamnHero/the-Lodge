@@ -80,7 +80,7 @@ Lodge.CoverFlow.init = function(el, options)
         el.data("coverflow-items", items);
         el.data("coverflow-offset", 0);   // Difference between center index & 3
         el.data("coverflow-selected", 0); // Item currently displayed in the center
-        el.trigger("coverflow-change", [0, items[selected]]);
+        el.trigger("coverflow-change", [0, items[0]]);
         for(var i = 0; i < 7; i++)
         {
           var itemIdx = (i + items.length - 3) % items.length;

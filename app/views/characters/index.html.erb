@@ -8,8 +8,8 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th></th>
-            <th></th>
+            <th>Race</th>
+            <th>Class</th>
             <th></th>
         </tr>
     </thead>
@@ -24,10 +24,10 @@
     <tbody>
     <% @characters.each do |char| %>
         <tr>
-            <td><%= char.name %></td>
-            <td class="control"><%= link_to 'Show', char, :class => 'item_action_link' %></td>
-            <td class="control"><%= link_to 'Edit', edit_character_path(char), :class => 'item_action_link' %></td>
-            <td class="control"><%= link_to 'Destroy', char, :confirm => 'Are you sure?', :method => :delete, :class => 'item_action_link' %></td>
+            <td><%= link_to char.name, char, :class => 'item_action_link show_link' %></td>
+            <td><%= char.race.name %></td>
+            <td><%= char.classes_str %></td>
+            <td class="control"><%= link_to 'Destroy', char, :confirm => 'Are you sure?', :method => :delete, :class => 'item_action_link destroy_link' %></td>
         </tr>
     <% end %>
     </tbody>
