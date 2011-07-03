@@ -42,8 +42,9 @@ class CharactersController < ApplicationController
     params[:character][:class_levels] = [ClassLevel.new({:user => current_user, :class_id => params[:class_id], :level => 1})]
     params[:character][:user] = current_user
     @character = Character.new(params[:character])
-    
+    print "Image params: " + params[:image].to_s
     if @character.save
+      @character.add_image(params[:image])
       redirect_to(characters_url, :notice => 'Your character has been created.')
     else
       render(:action => 'new', :notice => 'Error: could not create character.')

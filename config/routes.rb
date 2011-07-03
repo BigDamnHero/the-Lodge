@@ -22,6 +22,10 @@ TheLodge::Application.routes.draw do
   match 'cover_flow/classes' => 'cover_flow#char_classes'
   match 'cover_flow/class/:id' => 'cover_flow#char_class'
 
+  # Image service
+  match 'image/:type/:id(/:gender)' => 'images#image'
+  match 'thumb/:type/:id(/:gender)' => 'images#thumb'
+
   # Characters
 
 

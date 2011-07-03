@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110529045258) do
+ActiveRecord::Schema.define(:version => 20110703183139) do
 
   create_table "character_classes", :force => true do |t|
     t.string   "name"
@@ -53,6 +53,20 @@ ActiveRecord::Schema.define(:version => 20110529045258) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "images", :force => true do |t|
+    t.integer "instance_id"
+    t.string  "class_name"
+    t.string  "gender"
+    t.boolean "is_primary"
+    t.string  "image_url"
+    t.string  "thumb_url"
+  end
+
+  add_index "images", ["class_name"], :name => "index_images_on_class_name"
+  add_index "images", ["gender"], :name => "index_images_on_gender"
+  add_index "images", ["instance_id"], :name => "index_images_on_instance_id"
+  add_index "images", ["is_primary"], :name => "index_images_on_is_primary"
 
   create_table "races", :force => true do |t|
     t.string   "name"

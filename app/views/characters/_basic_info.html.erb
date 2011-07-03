@@ -8,3 +8,20 @@
   <%= f.label :description %><br />
   <%= f.text_area :description %>
 </div>
+<div id="images" class="images">
+  <div class="field">
+    <%= f.label :image_url0, 'Image url' %><br />
+    <div class="image_field_wrapper">
+      <input type="text" id="image_url0" name="image[image_url]" class="image_field" data-preview="image_preview0" />
+      <img id="image_preview0" class="preview_img0" />
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :thumb_url0, 'Thumbnail url (recommended size: 300x300px)' %><br />
+    <div class="image_field_wrapper">
+      <input type="text" id="thumb_url0" name="image[thumb_url]" class="image_field" data-preview="thumbnail_preview0" />
+      <img id="thumbnail_preview0" class="preview_img" />
+    </div>
+  </div>
+  <input type="hidden" id="thumb_primary0" name="image[is_primary]" value="true" />
+</div>
