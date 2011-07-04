@@ -18,8 +18,6 @@ ActiveRecord::Schema.define(:version => 20110703183139) do
     t.string   "role"
     t.string   "alignment"
     t.integer  "hit_die"
-    t.string   "image_url"
-    t.string   "thumb_url"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -79,8 +77,6 @@ ActiveRecord::Schema.define(:version => 20110703183139) do
     t.text     "names"
     t.text     "male_names"
     t.text     "female_names"
-    t.string   "image_url"
-    t.string   "thumb_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

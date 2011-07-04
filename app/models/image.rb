@@ -12,12 +12,14 @@ class Image < ActiveRecord::Base
   end
   
   def self.any_primary_image(class_name, instance_id)
-    Image.where("class_name = ? and instance_id = ? and is_primary = ?",
-                class_name, instance_id, true)
+    images = Image.where("class_name = ? and instance_id = ? and is_primary = ?",
+                         class_name, instance_id, true)
+    images.length > 0 ? images[0] : nil
   end
   
   def self.any_image(class_name, instance_id)
-    Image.where("class_name = ? and instance_id = ?", class_name, instance_id)
+    images = Image.where("class_name = ? and instance_id = ?", class_name, instance_id)
+    images.length > 0 ? images[0] : nil
   end
   
 end

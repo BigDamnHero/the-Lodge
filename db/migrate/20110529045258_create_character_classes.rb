@@ -6,8 +6,6 @@ class CreateCharacterClasses < ActiveRecord::Migration
       t.string    :role
       t.string    :alignment
       t.integer   :hit_die
-      t.string    :image_url
-      t.string    :thumb_url
       t.integer   :user_id
       
       t.timestamps

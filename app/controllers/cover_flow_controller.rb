@@ -6,7 +6,9 @@ class CoverFlowController < ApplicationController
     @races = Race.order(:name);
     @values = []
     for @race in @races
-      @values << { :id => @race.id, :name => @race.name, :image => @race.image_url, :thumb => @race.thumb_url }
+      @values << { :id => @race.id, :name => @race.name, 
+                   :image => image_url_path(@race.class.name, @race.id), 
+                   :thumb => thumb_url_path(@race.class.name, @race.id) }
     end
     
     respond_to do |format|
@@ -28,7 +30,9 @@ class CoverFlowController < ApplicationController
     @char_classes = CharacterClass.order(:name);
     @values = []
     for @c in @char_classes
-      @values << { :id => @c.id, :name => @c.name, :image => @c.image_url, :thumb => @c.thumb_url }
+      @values << { :id => @c.id, :name => @c.name, 
+                   :image => image_url_path(@c.class.name, @c.id), 
+                   :thumb => thumb_url_path(@c.class.name, @c.id) }
     end
     
     respond_to do |format|

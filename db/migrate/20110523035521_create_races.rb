@@ -11,8 +11,6 @@ class CreateRaces < ActiveRecord::Migration
       t.text      :names
       t.text      :male_names
       t.text      :female_names
-      t.string    :image_url
-      t.string    :thumb_url
       
       t.timestamps
     end

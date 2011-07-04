@@ -7,9 +7,4 @@ module HasImages
     image.save
   end
   
-  def before_destroy
-    print "}}}} BeforeDestroy called {{{{"
-    
-  end
-  
 end
