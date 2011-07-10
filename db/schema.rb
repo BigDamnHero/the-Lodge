@@ -10,7 +10,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110703183139) do
+ActiveRecord::Schema.define(:version => 20110704155025) do
+
+  create_table "campaign_members", :force => true do |t|
+    t.integer "campaign_id",  :null => false
+    t.integer "user_id",      :null => false
+    t.integer "character_id"
+    t.integer "role",         :null => false
+  end
+
+  add_index "campaign_members", ["campaign_id"], :name => "index_campaign_members_on_campaign_id"
+  add_index "campaign_members", ["character_id"], :name => "index_campaign_members_on_character_id"
+  add_index "campaign_members", ["user_id"], :name => "index_campaign_members_on_user_id"
+
+  create_table "campaigns", :force => true do |t|
+    t.string   "name",        :null => false
+    t.string   "description"
+    t.text     "summary"
+    t.integer  "user_id",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "campaigns", ["user_id"], :name => "index_campaigns_on_user_id"
 
   create_table "character_classes", :force => true do |t|
     t.string   "name"

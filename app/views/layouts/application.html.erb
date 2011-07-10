@@ -3,7 +3,7 @@
 <head>
   <title>The Lodge</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag "jquery-1.6", "jquery-ui-1.8.12.custom.min.js", "rails", "application", "autocomplete", "coverflow" %>
+  <%= javascript_include_tag "jquery-1.6", "jquery-ui-1.8.12.custom.min.js", "ui.multiselect", "rails", "application", "autocomplete", "coverflow" %>
   <%= yield :js_includes %>
   <%= csrf_meta_tag %>
 </head>
@@ -28,9 +28,7 @@
         
             <div id="menu_bar">
                 <%= link_to 'Characters', :characters %>
-                <a href="#">Creatures</a>
-                <a href="#">Encounters</a>
-                <a href="#">Maps</a>
+                <%= link_to 'Campaigns', :campaigns %>
                 <% if is_admin %>
                     <%= link_to "Misc", misc_path %>
                     <%= link_to "Users", users_path %>
@@ -51,7 +49,7 @@
             </div>
             
             <div id="sidebar" class="content_box">
-                
+                <%= yield :sidebar %>
             </div>
             
         </div>

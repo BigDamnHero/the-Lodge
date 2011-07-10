@@ -1,3 +1,0 @@
-class Creature < CreatureBase
-
-end

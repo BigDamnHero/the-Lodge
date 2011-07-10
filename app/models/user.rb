@@ -4,8 +4,12 @@ class User < ActiveRecord::Base
     
     has_many  :characters
     has_many  :class_levels
+    has_many  :campaign_members
+    has_many  :campaigns, :through => :campaign_members
     
-    def after_initialize
+    after_initialize  :set_roles
+    
+    def set_roles
       self[:roles] = self[:roles] || []
     end
     

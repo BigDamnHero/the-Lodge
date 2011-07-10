@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
     helper :all
     helper_method :current_user, :is_admin
-    filter_parameter_logging :password, :password_confirmation
     
     private
     
