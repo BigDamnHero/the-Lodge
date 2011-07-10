@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110704155025) do
+ActiveRecord::Schema.define(:version => 20110710213820) do
 
   create_table "campaign_members", :force => true do |t|
     t.integer "campaign_id",  :null => false
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20110704155025) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "show_tutorial",     :default => true, :null => false
+    t.string   "display_name"
   end
 
 end

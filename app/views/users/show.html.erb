@@ -2,6 +2,7 @@
 
 <h3><%= @user.email %></h3>
 
+<% if false %>
 <div class="field">
     <label>First Name:</label>
     <%= @user.first_name %>
@@ -10,6 +11,12 @@
 <div class="field">
     <label>Last Name:</label>
     <%= @user.last_name %>
+</div>
+<% end %>
+
+<div class="field">
+    <label>Display Name:</label>
+    <%= @user.display_name %>
 </div>
 
 <div class="field">

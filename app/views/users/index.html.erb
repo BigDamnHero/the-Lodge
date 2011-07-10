@@ -7,6 +7,7 @@
 <table>
     <thead>
         <tr>
+            <th>Name</th>
             <th>Email</th>
             <th>Activated</th>
             <th>Admin</th>
@@ -23,11 +24,13 @@
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
     </tfoot>
     <tbody>
     <% @users.each do |user| %>
         <tr>
+            <td><%= user.display_name %></td>
             <td><%= user.email %></td>
             <td><%= user.active %></td>
             <td><%= user.admin? %></td>
