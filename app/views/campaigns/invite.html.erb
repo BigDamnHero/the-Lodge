@@ -1,0 +1,18 @@
+<%= form_tag campaign_invite_path(@campaign), :id => "invite_form" do |f| %>
+  <div class="field">
+    <label for="users_select">Select players to invite</label>
+    <select id="users_select" class="multiselect" multiple="multiple" name="users[]">
+    <% @users.each do |u| %>
+      <option value="<%= u.id %>"><%= u.email %></option>
+    <% end %>
+    </select>
+  </div>
+  
+  <% if !request.xhr? %>
+    Submit buttons here
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+  $("#users_select").multiselect({ });
+</script>

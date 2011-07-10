@@ -1,0 +1,58 @@
+<h1 id="campaigns_heading" class="page_heading">Campaigns</h1>
+
+<div id="member_actions" class="actions_menu">
+  <%= link_to 'New Campaign', new_campaign_path, :class => 'action_link' %>
+</div>
+
+<h3>Campaign I GM</h3>
+<% if @campaigns_gm.empty? %>
+  <div>None</div>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @campaigns_gm.each do |campaign| %>
+      <tr>
+        <td><%= link_to campaign.name, campaign %></td>
+        <td><%= campaign.description %></td>
+        <td><%= link_to 'Destroy', campaign, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<br/><br/><br/>
+
+<h3>Campaigns I play in</h3>
+<% if @campaigns_player.empty? %>
+  <div>None</div>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @campaigns_player.each do |campaign| %>
+      <tr>
+        <td><%= link_to campaign.name, campaign %></td>
+        <td><%= campaign.description %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<br />
