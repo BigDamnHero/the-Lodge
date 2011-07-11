@@ -10,7 +10,7 @@ class CampaignsController < ApplicationController
     @campaigns_gm = []
     @campaigns_player = []
     @cms.each do |cm|
-      if cm.role == CampaignRole::PLAYER
+      if cm.role == CampaignRole::PLAYER || cm.role == CampaignRole::INVITED
         @campaigns_player << cm.campaign
       else
         @campaigns_gm << cm.campaign
