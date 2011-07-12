@@ -410,6 +410,17 @@ ul.action_menu li > a { position: relative; left: -4px; }
     box-flex: 1;
 }
 
+#campaigns #campaigns_menu_link {
+  color: #ccf;
+  text-shadow: 0 0 18px #fff;
+}
+
+#characters #characters_menu_link {
+  color: #ccf;
+  text-shadow: 0 0 18px #fff;
+}
+
+
 /* Login Form ------------------------------------------------------------*/
 .login_input {
     width: 10em !important;
@@ -514,6 +525,52 @@ div .login_input {
 #new_user_block p {
     position: relative;
     left: -30px;
+}
+
+
+
+/* Page Action Bar -------------------------------------------------------*/
+#page_action_bar {
+  position: absolute;
+  top: -1px; right: -1px;
+  border: solid #606060 1px;
+  border-radius: 0 6px 0 6px;
+}
+
+#page_action_bar ul {
+  list-style: none;
+}
+
+#page_action_bar li {
+  float: left;
+  padding: 0.5em 0;
+  border: solid #606060 0;
+  border-left-width: 1px;
+  background: rgba(0, 0, 0, 0.3);
+}
+#page_action_bar li:first-child { border-bottom-left-radius: 6px; border-width: 0px; }
+#page_action_bar li:last-child { border-top-right-radius: 6px; }
+#page_action_bar li:hover { background: rgba(255, 255, 255, 0.5); }
+
+#page_action_bar a {
+  padding: 0.5em 0.75em;
+}
+
+#page_action_bar li>a:hover {
+  
+}
+#page_action_bar li>a:first-child { border-bottom-left-radius: 6px; }
+#page_action_bar li>a:last-child { border-top-right-radius: 6px; }
+
+
+
+/* Special Links ---------------------------------------------------------*/
+
+a.create {
+  padding-left: 20px !important;
+  background-image: url(/images/icons/create.png);
+  background-repeat: no-repeat;
+  background-position: 4px 3px;
 }
 
 

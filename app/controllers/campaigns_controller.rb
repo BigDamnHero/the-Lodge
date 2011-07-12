@@ -1,6 +1,5 @@
 class CampaignsController < ApplicationController
-  before_filter :require_user
-  
+  before_filter :require_user, :set_page_id
   
   # GET /campaigns
   # GET /campaigns.xml
@@ -18,7 +17,7 @@ class CampaignsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.xml  { render :xml => @campaigns }
     end
   end
@@ -33,7 +32,7 @@ class CampaignsController < ApplicationController
     @invites = @campaign.campaign_members.where(:role => CampaignRole::INVITED)
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.xml  { render :xml => @campaign }
     end
   end
@@ -44,7 +43,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new
     
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.xml  { render :xml => @campaign }
     end
   end
@@ -116,5 +115,11 @@ class CampaignsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @campaign, :notice => "Invitations have been sent." }
     end
+  end
+  
+  private
+  
+  def set_page_id
+    @page_id = 'campaigns'
   end
 end

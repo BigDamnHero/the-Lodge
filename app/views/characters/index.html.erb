@@ -1,8 +1,10 @@
 <h1 id="character_heading" class="page_heading">Characters</h1>
 
-<div id="member_actions" class="actions_menu">
-    <%= link_to 'New Character', new_character_path, :class => 'action_link' %>
-</div>
+<% content_for :page_actions do %>
+  <ul>
+    <li><%= link_to 'New Character', new_character_path, :class => 'action_link create' %></li>
+  </ul>
+<% end %>
 
 <table>
     <thead>

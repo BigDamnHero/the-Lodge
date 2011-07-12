@@ -11,5 +11,4 @@ module ApplicationHelper
   def empty?(str)
     !show(str)
   end
-
 end

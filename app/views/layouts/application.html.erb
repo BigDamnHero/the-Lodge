@@ -7,7 +7,7 @@
   <%= yield :js_includes %>
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body id="<%= @page_id || :body %>">
 
     <div id="page_container">
     
@@ -27,11 +27,11 @@
             </div>
         
             <div id="menu_bar">
-                <%= link_to 'Characters', :characters %>
-                <%= link_to 'Campaigns', :campaigns %>
+                <%= link_to 'Characters', :characters, :id => 'characters_menu_link' %>
+                <%= link_to 'Campaigns', :campaigns, :id => 'campaigns_menu_link' %>
                 <% if is_admin %>
-                    <%= link_to "Misc", misc_path %>
-                    <%= link_to "Users", users_path %>
+                    <%= link_to "Misc", misc_path, :id => 'misc_menu_link' %>
+                    <%= link_to "Users", users_path, :id => 'users_menu_link' %>
                 <% end %>
             </div>
         </div>
@@ -46,6 +46,10 @@
             
             <div id="main_column" class="content_box">
                 <%= yield %>
+                
+                <div id="page_action_bar">
+                  <%= yield :page_actions %>
+                </div>
             </div>
             
             <div id="sidebar" class="content_box">

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
     helper :all
     helper_method :current_user, :is_admin
-    
+        
     private
     
     def current_user_session

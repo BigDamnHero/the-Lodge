@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
 
-  before_filter :require_user
-    
+  before_filter :require_user, :set_page_id
+  
   # GET /characters
   # GET /characters.xml
   def index
@@ -9,7 +9,7 @@ class CharactersController < ApplicationController
     #@characters = Character.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.xml  { render :xml => @characters }
     end
   end
@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
     @character = current_user.characters.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.xml  { render :xml => @character }
     end
   end
@@ -33,7 +33,7 @@ class CharactersController < ApplicationController
     #@character.class_levels << ClassLevel.new({ :user_id => 0, :class_id => 1, :level => 1 })
     
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.xml  { render :xml => @character }
     end
   end
@@ -59,5 +59,11 @@ class CharactersController < ApplicationController
       format.html { redirect_to(characters_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  
+  def set_page_id
+    @page_id = :characters
   end
 end
